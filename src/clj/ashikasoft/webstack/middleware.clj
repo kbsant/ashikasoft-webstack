@@ -83,7 +83,8 @@
       ((if (:websocket? request) handler wrapped) request))))
 
 (defn wrap-base [handler]
-  (-> wrap-webjars
+  (-> handler
+      wrap-webjars
       wrap-flash
       (wrap-session {:cookie-attrs {:http-only true}})
       (wrap-defaults

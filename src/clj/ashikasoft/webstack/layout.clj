@@ -4,6 +4,7 @@
     [ring.util.http-response :refer [content-type ok]]
     [ring.middleware.anti-forgery :refer [*anti-forgery-token*]]))
 
+;; This was originally from the Luminus template and is used with middleware.clj
 (declare ^:dynamic *app-context*)
 
 (defn render-text [text]

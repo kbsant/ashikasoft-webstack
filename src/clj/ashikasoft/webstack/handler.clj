@@ -1,3 +1,4 @@
+;; This code is based on the Reitit docs and code generated from the Luminus template.
 (ns ashikasoft.webstack.handler
   (:require [ashikasoft.webstack.layout :refer [error-page]]
             [reitit.ring :as ring]

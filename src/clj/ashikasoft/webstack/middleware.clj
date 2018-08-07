@@ -1,3 +1,4 @@
+;; This code is mostly generated from the Luminus template and is EPL.
 (ns ashikasoft.webstack.middleware
   (:require [cheshire.generate :as cheshire]
             [cognitect.transit :as transit]

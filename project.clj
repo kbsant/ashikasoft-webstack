@@ -30,5 +30,6 @@
                  [ring/ring-core "1.6.3"]
                  [ring/ring-defaults "0.3.2"]]
 
+  :source-paths ["src/clj" "src/cljc"]
   :min-lein-version "2.0.0"
   :plugins [[lein-ancient "0.6.15"]])

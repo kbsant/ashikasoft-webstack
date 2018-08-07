@@ -4,7 +4,7 @@
   :url "http://www.ashikasoft.com"
 
   :dependencies [[clj-time "0.14.4"]
-                 [cljs-ajax "0.7.4"]
+                 [cljs-ajax "0.7.4":exclusions [cheshire]]
                  [com.cognitect/transit-java "0.8.332"]
                  [cprop "0.1.11"]
                  [crypto-password "0.2.0"]
@@ -15,6 +15,7 @@
                  [metosin/muuntaja "0.5.0"]
                  [metosin/reitit "0.1.3"]
                  [metosin/ring-http-response "0.9.0"]
+                 [com.fasterxml.jackson.core/jackson-core "2.9.5"]
                  [org.apache.commons/commons-text "1.4"]
                  [org.clojure/clojure "1.9.0"]
                  [org.clojure/core.async "0.4.474"]
@@ -30,10 +31,4 @@
                  [ring/ring-defaults "0.3.2"]]
 
   :min-lein-version "2.0.0"
-  
-  :source-paths ["src/clj" "src/cljc"]
-  :target-path "target/%s/"
-
-  :plugins [[lein-ancient "0.6.15"]]
-  :clean-targets ^{:protect false}
-  [:target-path [:builds :app :compiler :output-dir] [:builds :app :compiler :output-to]])
+  :plugins [[lein-ancient "0.6.15"]])

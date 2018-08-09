@@ -26,6 +26,7 @@
                  [org.webjars/bootstrap "4.1.1"]
                  [org.webjars/font-awesome "5.1.0"]
                  [org.webjars/webjars-locator "0.34"]
+                 [reagent "0.8.1"]
                  [ring-webjars "0.2.0"]
                  [ring/ring-core "1.6.3"]
                  [ring/ring-defaults "0.3.2"]]

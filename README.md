@@ -18,5 +18,6 @@ The main items are:
 * Ring request handler
 * Reitit router
 * Hiccup rendering
+* Reagent
 * Integrant component management
 

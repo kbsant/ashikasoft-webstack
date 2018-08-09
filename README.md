@@ -2,7 +2,7 @@
 
 [![Clojars Project](https://img.shields.io/clojars/v/ashikasoft/webstack.svg)](https://clojars.org/ashikasoft/webstack)
 
-A Clojure-based web stack
+Web dependencies for Clojure
 
 ## What's this
 This is a clojure library that groups together common dependencies for a web stack.
@@ -21,3 +21,14 @@ The main items are:
 * Reagent
 * Integrant component management
 
+## Usage
+To use this library:
+* include it as a dependency, along with clojure and clojurescript
+* httpd is provided as an integrant plugin.
+
+See the [anketeur](https://github.com/kbsant/anketeur) project for actual usage.
+
+# License
+Dependencies are under their respective licenses.
+Code included in this library is MIT licensed, unless marked as derived from Luminus, which is EPL.
+No warranty.

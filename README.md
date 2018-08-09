@@ -1,4 +1,7 @@
 # ashikasoft-webstack
+
+[![Clojars Project](https://img.shields.io/clojars/v/ashikasoft/webstack.svg)](https://clojars.org/ashikasoft/webstack)
+
 A Clojure-based web stack
 
 ## What's this

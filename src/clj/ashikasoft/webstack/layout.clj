@@ -8,7 +8,7 @@
 (declare ^:dynamic *app-context*)
 
 (defn render-text [text]
-  (content-type (ok text) "text/plain"))
+  (content-type (ok text) "text/plain; charset=utf-8"))
 
 (defn render-hiccup [hiccup-fn params]
   (content-type
@@ -24,3 +24,4 @@
   {:status  status
    :headers {"Content-Type" "text/html; charset=utf-8"}
    :body    (view.error/render {:glossary details})})
+

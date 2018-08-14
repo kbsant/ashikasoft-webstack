@@ -12,5 +12,5 @@
   (or (cli/parse-opts args cli-options-config) {}))
 
 (defn add-shutdown-hook [stop-fn]
-  (.addShutdownHook (Runtime/getRuntime) stop-fn))
+  (.addShutdownHook (Runtime/getRuntime) (Thread. stop-fn)))
 

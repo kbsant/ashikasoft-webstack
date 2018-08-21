@@ -3,11 +3,12 @@
   :description "Base web stack"
   :url "http://www.ashikasoft.com"
 
-  :dependencies [[clj-time "0.14.4"]
+  :dependencies [[buddy/buddy-auth "2.1.0"]
+                 [buddy/buddy-hashers "1.3.0"]
+                 [clj-time "0.14.4"]
                  [cljs-ajax "0.7.4":exclusions [cheshire]]
                  [com.cognitect/transit-java "0.8.332"]
                  [cprop "0.1.11"]
-                 [crypto-password "0.2.0"]
                  [integrant "0.6.3"]
                  [luminus-immutant "0.2.4"]
                  [luminus-nrepl "0.1.4"]

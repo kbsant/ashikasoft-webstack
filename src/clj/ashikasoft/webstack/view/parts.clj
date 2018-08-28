@@ -33,7 +33,7 @@
       [:meta {:http-equiv "Content-Type" :content "text/html; charset=UTF-8"}]
       [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
       [:link {:rel "shortcut icon" :type "image/png" :href "/img/favicon.png"}]
-      [:title (glossary :title)]
+      [:title (:title glossary)]
       (page/include-css
          "/css/screen.css"
          "/assets/bootstrap/css/bootstrap.min.css"
@@ -51,7 +51,7 @@
       [:meta {:http-equiv "Content-Type" :content "text/html; charset=UTF-8"}]
       [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
       [:link {:rel "shortcut icon" :type "image/png" :href "/img/favicon.png"}]
-      [:title (glossary :title)]
+      [:title (:title glossary)]
       (page/include-css
          "/css/screen.css"
          "/assets/bootstrap/css/bootstrap.min.css"
@@ -61,14 +61,11 @@
          "/assets/jquery/jquery.min.js"
          "/assets/bootstrap/js/bootstrap.min.js")
       (js-script
-        (js-var "context" (js-quot servlet-context))
         (js-var "csrfToken" (js-quot csrf-token)))
       headitems]
     [:body
-      (form/navbar [:a {:href "/"} "Home"])
       [:div#app
         [:div.container
-          [:div.jumbotron [:h1 (glossary :title)]]
           [:div.three-quarters-loader "Loading… (uses javascript)"]
           (or
             content

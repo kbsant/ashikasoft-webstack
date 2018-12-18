@@ -18,7 +18,7 @@
                  [metosin/ring-http-response "0.9.0"]
                  [com.fasterxml.jackson.core/jackson-core "2.9.5"]
                  [org.apache.commons/commons-text "1.4"]
-                 [org.clojure/clojure "1.9.0"]
+                 [org.clojure/clojure "1.10.0"]
                  [org.clojure/core.async "0.4.474"]
                  [org.clojure/data.codec "0.1.1"]
                  [org.clojure/tools.cli "0.3.7"]

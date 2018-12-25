@@ -12,6 +12,18 @@
     (is (= "Rubberducky you're so fine number 9"
            (interpolate "Rubber{:x} you're {:y} number {:z}"
                         {:x 'ducky :y "so fine" :z 9}))))
+  (testing "Interpolate nested entries."
+    (is (= "Rubber ducky you're so fine"
+           (interpolate "{:fragment} you're {:predicate}"
+                        {:animal "duck"
+                         :material "Rubber"
+                         :adj "fine"
+                         :adj-modifier "so"
+                         :noun-modifier "{:material}"
+                         :noun-suffix "y"
+                         :noun "{:animal}{:noun-suffix}"
+                         :fragment "{:noun-modifier} {:noun}"
+                         :predicate "{:adj-modifier} {:adj}"}))))
   (testing "Interpolate without entries."
     (is (= "Rubbergatoryou'resofine"
            (interpolate "Rubbergatoryou'resofine" {:x "ducky"}))))

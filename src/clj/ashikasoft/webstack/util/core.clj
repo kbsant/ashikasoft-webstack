@@ -4,6 +4,11 @@
    [clojure.pprint :as pprint]
    [cheshire.core :as json]))
 
+(defn- interpolate-pass [xf s ks m]
+  (reduce #(string/replace %1 (str "{" %2 "}") (xf (str (%2 m))))
+           s
+           (keys m)))
+
 (defn interpolate
   "Given an optional transform function, a string and a map, interpolate the string
   with values from the map. The pattern {:keyname} will be replaced with values
@@ -11,9 +16,14 @@
   ([s m]
    (interpolate identity s m))
   ([xf s m]
-   (reduce #(string/replace %1 (str "{" %2 "}") (xf (str (%2 m))))
-           s
-           (keys m))))
+   (let [ks (keys m)]
+     (loop [interpolated s
+            n (count ks)]
+       (if (zero? n)
+         interpolated
+         (recur
+          (interpolate-pass xf interpolated ks m)
+          (dec n)))))))
 
 (defmulti export-format (fn [format _] format))
 

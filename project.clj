@@ -1,7 +1,7 @@
 (defproject ashikasoft/webstack "0.1.0-SNAPSHOT"
 
   :description "Base web stack"
-  :url "http://www.ashikasoft.com"
+  :url "https://github.com/kbsant/ashikasoft-webstack"
 
   :dependencies [[buddy/buddy-auth "2.1.0"]
                  [buddy/buddy-hashers "1.3.0"]

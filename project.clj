@@ -11,7 +11,7 @@
                  [cprop "0.1.11"]
                  [integrant "0.6.3"]
                  [luminus-immutant "0.2.4"]
-                 [luminus-nrepl "0.1.4"]
+                 [luminus-nrepl "0.1.5"]
                  [luminus/ring-ttl-session "0.3.2"]
                  [metosin/muuntaja "0.5.0"]
                  [metosin/reitit "0.1.3"]

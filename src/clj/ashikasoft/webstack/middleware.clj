@@ -7,7 +7,6 @@
             [ring.middleware.anti-forgery :refer [wrap-anti-forgery]]
             [ring.middleware.webjars :refer [wrap-webjars]]
             [muuntaja.core :as muuntaja]
-            [muuntaja.format.json :refer [json-format]]
             [muuntaja.format.transit :as transit-format]
             [muuntaja.middleware :refer [wrap-format wrap-params]]
             [ring.middleware.flash :refer [wrap-flash]]
@@ -64,12 +63,9 @@
     muuntaja/default-options
     :formats
     merge
-    {"application/json"
-     json-format
-
-     "application/transit+json"
-     {:decoder [(partial transit-format/make-transit-decoder :json)]
-      :encoder [#(transit-format/make-transit-encoder
+    {"application/transit+json"
+     {:decoder [(partial transit-format/decoder :json)]
+      :encoder [#(transit-format/encoder
                    :json
                    (merge
                      %

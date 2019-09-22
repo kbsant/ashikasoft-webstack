@@ -5,7 +5,6 @@
 
   :dependencies [[buddy/buddy-auth "2.2.0"]
                  [buddy/buddy-hashers "1.4.0"]
-                 [clj-time "0.15.2"]
                  [cljs-ajax "0.8.0":exclusions [cheshire]]
                  [com.cognitect/transit-java "0.8.337"]
                  [cprop "0.1.14"]

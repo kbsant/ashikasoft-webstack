@@ -44,8 +44,8 @@
     {:error-response
      (error-page
        {:status 403
-        :title "Invalid anti-forgery token"
-        :message "The session has expired. Please copy the information from the previous form and then reload the page before re-entering the form."})}))
+        :title "Session Token Expired"
+        :message "The session has expired. If you have entered any information on the previous page, please copy it and then reload the page before re-entering the form."})}))
 
 (def joda-time-writer
   (transit/write-handler

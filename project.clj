@@ -4,7 +4,7 @@
   :url "https://github.com/kbsant/ashikasoft-webstack"
 
   :dependencies [[buddy/buddy-auth "2.2.0"]
-                 [buddy/buddy-hashers "1.6.0"]
+                 [buddy/buddy-hashers "1.7.0"]
                  [cljs-ajax "0.8.1":exclusions [cheshire]]
                  [com.cognitect/transit-java "1.0.343"]
                  [cprop "0.1.17"]
@@ -15,7 +15,7 @@
                  [metosin/muuntaja "0.6.7"]
                  [metosin/reitit "0.5.10"]
                  [metosin/ring-http-response "0.9.1"]
-                 [com.fasterxml.jackson.core/jackson-core "2.11.3"]
+                 [com.fasterxml.jackson.core/jackson-core "2.12.0"]
                  [org.apache.commons/commons-text "1.9"]
                  [org.clojure/clojure "1.10.1"]
                  [org.clojure/core.async "1.3.610"]
@@ -26,7 +26,7 @@
                  [org.webjars/bootstrap "4.1.1"]
                  [org.webjars/font-awesome "5.15.1"]
                  [org.webjars/webjars-locator "0.40"]
-                 [reagent "0.10.0"]
+                 [reagent "1.0.0"]
                  [ring-webjars "0.2.0"]
                  [ring/ring-core "1.8.2"]
                  [ring/ring-defaults "0.3.2"]]

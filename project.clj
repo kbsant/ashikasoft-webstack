@@ -1,4 +1,4 @@
-(defproject ashikasoft/webstack "0.1.1-SNAPSHOT"
+(defproject ashikasoft/webstack "0.1.1"
 
   :description "Base web stack"
   :url "https://github.com/kbsant/ashikasoft-webstack"
@@ -17,7 +17,7 @@
                  [metosin/ring-http-response "0.9.1"]
                  [com.fasterxml.jackson.core/jackson-core "2.12.1"]
                  [org.apache.commons/commons-text "1.9"]
-                 [org.clojure/clojure "1.10.2-rc1"]
+                 [org.clojure/clojure "1.10.1"]
                  [org.clojure/core.async "1.3.610"]
                  [org.clojure/data.codec "0.1.1"]
                  [org.clojure/tools.cli "1.0.194"]

@@ -2,7 +2,7 @@
 (ns ashikasoft.webstack.middleware
   (:require 
    [clojure.tools.logging :as log]
-   [ashikasoft.webstack.layout :refer [*app-context* error-page]]
+   [ashikasoft.webstack.layout :refer [*app-context*] :as layout]
    [ring.middleware.anti-forgery :refer [wrap-anti-forgery]]
    [ring.middleware.webjars :refer [wrap-webjars]]
    [muuntaja.core :as muuntaja]
@@ -27,25 +27,31 @@
                 (:app-context {}))]
       (handler request))))
 
+(defn wrap-internal-error-custom [error-page-fn handler]
+ (fn [req]
+   (try
+     (handler req)
+     (catch Throwable t
+       (log/error t (.getMessage t))
+       (error-page-fn
+        {:status 500
+         :title "Server error"
+         :message "An error occurred and has been logged. Please contact support for any urgent requests."})))))
+
 (defn wrap-internal-error [handler]
-  (fn [req]
-    (try
-      (handler req)
-      (catch Throwable t
-        (log/error t (.getMessage t))
-        (error-page
-         {:status 500
-          :title "Server error"
-          :message "An error occurred and has been logged. Please contact support for any urgent requests."})))))
+ (wrap-internal-error-custom layout/error-page handler))
+
+(defn wrap-csrf-custom [error-page-fn handler]
+ (wrap-anti-forgery
+  handler
+  {:error-response
+   (error-page-fn
+    {:status 403
+     :title "Session Token Expired"
+     :message "The session has expired. If you have entered any information on the previous page, please copy it and then reload the page before re-entering the form."})}))
 
 (defn wrap-csrf [handler]
-  (wrap-anti-forgery
-    handler
-    {:error-response
-     (error-page
-       {:status 403
-        :title "Session Token Expired"
-        :message "The session has expired. If you have entered any information on the previous page, please copy it and then reload the page before re-entering the form."})}))
+ (wrap-csrf-custom layout/error-page handler))
 
 (def restful-format-options
   (update
@@ -63,14 +69,18 @@
       ;; since they're not compatible with this middleware
       ((if (:websocket? request) handler wrapped) request))))
 
+(defn wrap-base-custom [error-fn handler]
+  (let [wrap-internal-error-fn (partial wrap-internal-error-custom error-fn)]
+    (-> handler
+        wrap-webjars
+        wrap-flash
+        (wrap-session {:cookie-attrs {:http-only true}})
+        (wrap-defaults
+         (-> site-defaults
+             (assoc-in [:security :anti-forgery] false)
+             (dissoc :session)))
+        wrap-context
+        wrap-internal-error-fn)))
+
 (defn wrap-base [handler]
-  (-> handler
-      wrap-webjars
-      wrap-flash
-      (wrap-session {:cookie-attrs {:http-only true}})
-      (wrap-defaults
-        (-> site-defaults
-            (assoc-in [:security :anti-forgery] false)
-            (dissoc :session)))
-      wrap-context
-      wrap-internal-error))
+  (wrap-base-custom layout/error-page handler))

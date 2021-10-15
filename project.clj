@@ -23,7 +23,7 @@
                  [org.clojure/tools.cli "1.0.206"]
                  [org.clojure/tools.logging "1.1.0"]
                  [org.webjars.bower/tether "1.4.4"]
-                 [org.webjars/bootstrap "5.1.1"]
+                 [org.webjars/bootstrap "5.1.2"]
                  [org.webjars/font-awesome "5.15.4"]
                  [org.webjars/webjars-locator "0.42"]
                  [reagent "1.1.0"]

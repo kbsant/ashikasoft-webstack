@@ -48,7 +48,7 @@
    (error-page-fn
     {:status 403
      :title "Form Expired"
-     :message "The previous form has expired. If you have entered any information on the previous page, please copy it and then reload the page before re-entering the form."})}))
+     :message "The previous form has expired. If you had entered any information on the previous page, please copy it and then reload the page before re-entering the form."})}))
 
 (defn wrap-csrf [handler]
  (wrap-csrf-custom layout/error-page handler))

@@ -15,7 +15,7 @@
                  [metosin/muuntaja "0.6.8"]
                  [metosin/reitit "0.5.18"]
                  [metosin/ring-http-response "0.9.3"]
-                 [com.fasterxml.jackson.core/jackson-core "2.13.2"]
+                 [com.fasterxml.jackson.core/jackson-core "2.13.3"]
                  [org.apache.commons/commons-text "1.9"]
                  [org.clojure/clojure "1.11.1"]
                  [org.clojure/core.async "1.5.648"]

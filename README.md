@@ -21,6 +21,13 @@ The main items are:
 * Reagent
 * Integrant component management
 
+## Building
+
+This library is available, pre-built from clojars. To check dependencies, build and install on a local repo, use leiningen:
+
+    lein deps
+	lein do clean, install
+
 ## Usage
 To use this library:
 * include it as a dependency, along with clojure and clojurescript

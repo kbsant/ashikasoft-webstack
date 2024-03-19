@@ -1,4 +1,4 @@
-(defproject ashikasoft/webstack "0.1.8-SNAPSHOT"
+(defproject ashikasoft/webstack "0.1.8"
 
   :description "Base web stack"
   :url "https://github.com/kbsant/ashikasoft-webstack"

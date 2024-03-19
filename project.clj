@@ -2,7 +2,8 @@
 
   :description "Base web stack"
   :url "https://github.com/kbsant/ashikasoft-webstack"
-
+  :license {:name "MIT License"
+            :url "https://opensource.org/licenses/MIT"}
   :dependencies [[buddy/buddy-auth "3.0.323"]
                  [buddy/buddy-hashers "2.0.167"]
                  [cljs-ajax "0.8.4" :exclusions [cheshire]]
